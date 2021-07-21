@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="header__content-wrapper">
+    <div class="header__filename">
+      <label >{{ fileName }}</label>
+        
+    </div>
+    
+    <div class="header__page-indicator">
+      <span class="header__page-indicator-current">{{ currentPage }}</span>
+      <span class="header__page-indicator-separator">/</span>
+      <span class="header__page-indicator-total">{{ totalPages }}</span>
+    </div>
+    
+    <div class="header__pdf-controls">
+      <button
+        class="header__btn"
+        (click)="zoom('increment')"
+        [disabled]="zoomAmt >= zoomMax"
+      >
+        zoom in
+      </button>
+      <button
+        class="header__btn"
+        (click)="zoom('decrement')"
+        [disabled]="zoomMin >= zoomAmt"
+      >
+        zoom out
+      </button>
+      <div class="content">
+        <input type="file" id="file">
+      </div>   
+    </div>
+  </div>
+</div>
